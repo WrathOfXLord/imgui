@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.27.0)
+project(IMGUI LANGUAGES CXX)
+
+set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(IMGUI_SOURCES ${IMGUI_DIR}/*.cpp)
+
+FILE(GLOB IMGUI_SOURCES  ${IMGUI_DIR}/*.cpp)
+
+add_library(IMGUI OBJECT ${IMGUI_SOURCES})
+
+target_compile_definitions(IMGUI PUBLIC ${VORTEX_PREPROCESSOR_DEFS})
